@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.button {
+  @apply text-gray-100 inline-block text-center bg-blue-600 px-6 py-2 rounded-full font-bold ring-2 ring-blue-400 shadow-md shadow-blue-500;
+}
