@@ -19,5 +19,7 @@ module.exports = async function () {
 
   return {
     downloadLink,
+    version: release.data.tag_name,
+    size: `${Math.round(asset.size / 1024 / 1024)} MB`,
   };
 };
