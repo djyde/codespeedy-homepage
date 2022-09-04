@@ -1,17 +1,17 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
-    <title>CodeSpeedy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>CodeSpeedy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <meta property="og:site_name" content="CodeSpeedy"/>
-    <meta property="og:title" content="CodeSpeedy"" />
+  <meta property="og:site_name" content="CodeSpeedy" />
+  <meta property="og:title" content="CodeSpeedy"" />
   <meta property=" og:description" content="A code snippet manager for VS Code" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://codespeedy.randyloop.com/public/screenshot.png" />
@@ -26,18 +26,18 @@
       <!-- <img class="w-24 inline-block self-center" src="/public/logo.png" alt="logo" /> -->
       <!-- <h1 class="font-bold text-5xl text-gray-100">CodeSpeedy</h1> -->
       <h3 class="tracking-wide text-xl text-gray-400 max-auto inline-block px-12 lg:px-48">
-        <span
-          class="text-gray-100">CodeSpeedy</span> is a simple tool to manage your
+        <span class="text-gray-100">CodeSpeedy</span> is a simple tool to manage your
         code snippet and sync to your Visual Studio Code immediately.</h3>
-      <div class="mt-4 flex gap-4 justify-center">
-        <a class="button"
-          href="{{ download.downloadLink }}">Download for Mac
-          ({{download.size}})</a>
+      <div class="mt-4 flex gap-4 justify-center flex-col px-24 sm:flex-row">
+        <a class="button" href="{{ download.mac.downloadLink }}">Download for Mac
+          ({{download.mac.size}})</a>
+        <a class="button" href="{{ download.windows.downloadLink }}">Download for Windows
+          ({{download.windows.size}})</a>
       </div>
       <div class="text-gray-500 text-sm">
-        <div>
-          {{download.version}} Beta (Windows version is coming soon)
-        </div>
+        <!-- <div>
+          {{download.mac.version}}
+        </div> -->
         <div class="mt-4">
           <a class="underline text-gray-400" target="_blank"
             href="https://github.com/djyde/codespeedy-feedback/discussions">
@@ -48,7 +48,7 @@
     </section>
   </div>
   <section class="px-12 lg:px-48 py-12">
-    <img src="/public/screenshot.png"/>
+    <img src="/public/screenshot.png" />
   </section>
   <!-- 
   <section class="text-gray-100 text-center">

@@ -8,18 +8,42 @@ module.exports = async function () {
     }
   );
 
-  const asset = release.data.assets.find((a) => a.name.includes(".app.tar.gz"));
+  const assetForMac = release.data.assets.find((a) =>
+    a.name.includes(".app.tar.gz")
+  );
+  const assetForWindows = release.data.assets.find((a) =>
+    a.name.includes(".msi.zip")
+  );
 
-  const downloadLink = `https://tauri-updater.deno.dev/download-asset?${new URLSearchParams(
-    {
-      asset: asset.url,
-      filename: asset.name,
-    }
-  )}`;
+  console.log(release.data)
+
+  const downloads = {
+    windows: assetForWindows
+      ? {
+          downloadLink: `https://tauri-updater.deno.dev/download-asset?${new URLSearchParams(
+            {
+              asset: assetForWindows.url,
+              filename: assetForWindows.name,
+            }
+          )}`,
+          version: release.data.tag_name,
+          size: `${Math.round(assetForWindows.size / 1024 / 1024)} MB`,
+        }
+      : undefined,
+    mac: {
+      downloadLink: `https://tauri-updater.deno.dev/download-asset?${new URLSearchParams(
+        {
+          asset: assetForMac.url,
+          filename: assetForMac.name,
+        }
+      )}`,
+      version: release.data.tag_name,
+      size: `${Math.round(assetForMac.size / 1024 / 1024)} MB`,
+    },
+  };
 
   return {
-    downloadLink,
-    version: release.data.tag_name,
-    size: `${Math.round(asset.size / 1024 / 1024)} MB`,
+    mac: downloads.mac,
+    windows: downloads.windows,
   };
 };
