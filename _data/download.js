@@ -15,8 +15,6 @@ module.exports = async function () {
     a.name.includes(".msi.zip")
   );
 
-  console.log(release.data)
-
   const downloads = {
     windows: assetForWindows
       ? {
